@@ -1,0 +1,211 @@
+/* CSS Reset */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* SCSS Variables */
+  /* Fonts */
+  $ff-primary: 'Inter', sans-serif;
+
+  /* Font Size */
+  $fs-base: 16px;
+  $h1-fs: 25px;
+  $h2-fs: 16px;
+  $h3-fs: 13px;
+  $p-fs: 11px;
+  $button-fs: 14px;
+
+  /* Font Weight */
+  $fw-regular: 400;
+  $fw-medium: 500;
+  $fw-bold: 700;
+
+ /* line-height */
+ $lh-p-text: 17px;
+ $lh-button-text: 16px;
+
+ /* Colors */
+ $clr-primary-400: #F47D27;
+ $clr-neutral-400-footer-bg: #D5D4D8;
+ $clr-neutral-200-main-bg: #F5F5F5;
+ $clr-neutral-100-button-bg: #FFFFFF;
+ $clr-neutral-800-button-text: #374151;
+ $clr-neutral-500-p-text: #4A4E74;
+ $clr-neutral-900-header-text: #2B283A;
+
+ $clr-tertiary-400-linkedin-button-bg: #297FE5;
+
+ /* Border Radius */
+ $br-button: 6px;
+
+/* Border */
+$border-email-button: 1px solid #D1D5DB;
+$border-linkedin-button: 1px solid #297FE5;
+
+/* Custom Styles */
+
+body, html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $clr-neutral-200-main-bg;
+  font-family: $ff-primary;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 317px;
+  margin: 5em auto;
+  background-color: $clr-neutral-100-button-bg;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 20px;
+
+  .profile-picture-container {
+    width: 317px;
+    height: 317px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .header-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+
+    h1 {
+      font-size: $h1-fs;
+      font-weight: $fw-bold;
+      color: $clr-neutral-900-header-text;
+    }
+
+    h3 {
+      font-size: $h3-fs;
+      font-weight: $fw-medium;
+      color: $clr-primary-400;
+      margin-top: 6px;
+    }
+
+    p {
+      font-size: $p-fs;
+      color: $clr-neutral-500-p-text;
+      line-height: $lh-p-text;
+      margin-top: 9px;
+    }
+  }
+
+  .header-social-container {
+    display: flex;
+    gap: 17px;
+    
+
+    .header-social-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px 9px 13px;
+      cursor: pointer;
+      border-radius: $br-button;
+      font-size: $button-fs;
+      font-weight: $fw-medium;
+      width: 115px;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+
+      &.email-button {
+        border: $border-email-button;
+        background-color: $clr-neutral-100-button-bg;
+        color: $clr-neutral-800-button-text;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+      }
+
+      &.linkedin-button {
+        border: $border-linkedin-button;
+        background-color: $clr-tertiary-400-linkedin-button-bg;
+        color: $clr-neutral-100-button-bg;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+      }
+    }
+  }
+}
+
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 35px;
+  gap: 27px;
+
+  .main-content-about-container,
+  .main-content-interests-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    h2 {
+      font-size: $h2-fs;
+      font-weight: $fw-bold;
+      color: $clr-neutral-900-header-text;
+    }
+
+    p {
+      font-size: $p-fs;
+      color: $clr-neutral-500-p-text;
+      line-height: $lh-p-text;
+      font-weight: $fw-regular;
+    }
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background-color: $clr-neutral-400-footer-bg;
+  padding: 20px 0;
+  margin-top: 30px;
+
+  .footer-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
